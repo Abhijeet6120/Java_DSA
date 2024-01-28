@@ -1,0 +1,34 @@
+package Lecture27;
+
+public class Count_Prime_Sieve {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 100;
+		
+		prime_Print(n);
+
+	}
+	// Function to count the prime number b/w 1 to 100
+	public static void prime_Print(int n) {
+		
+		boolean[] prime = new boolean[n + 1];
+		prime[0] = true;
+		prime[1] = true;
+		
+		for(int i=2; i*i<= n; i++) {
+			if(prime[i] = false) {
+				
+				for(int j=2; j*i < prime.length; j++) {		// Table for number
+					prime[i * j] = true;
+				}
+			}
+		}
+		for(int i=0; i<prime.length; i++) {
+			
+			if(prime[i] = false) {
+				System.out.print(i+" ");
+			}
+		}
+	}
+}
